@@ -158,9 +158,6 @@ section { padding: var(--section-pad); }
 
 .nav.scrolled {
   background: rgba(8, 12, 18, 0.96);
-  backdrop-filter: blur(12px);
-  padding: 1rem 2rem;
-  border-bottom: 1px solid var(--border);
 }
 
 .nav-logo {
@@ -268,6 +265,7 @@ section { padding: var(--section-pad); }
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 9999;
     overflow-y: auto;
+    overscroll-behavior: contain;
   }
 
   .nav-menu.open { transform: translateX(0); }
@@ -301,12 +299,6 @@ section { padding: var(--section-pad); }
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease;
-}
-
-.nav-backdrop.open {
-  opacity: 1;
-  pointer-events: auto;
-  touch-action: none;
 }
 
 /* ===== HERO ===== */
@@ -1376,7 +1368,7 @@ textarea { resize: vertical; min-height: 110px; }
   .stat-number { font-size: 2rem; }
 
   .nav { padding: 1rem; }
-  .nav.scrolled { padding: 0.8rem 1rem; }
+  .nav.scrolled { padding: 1rem; }
 
   .location-map { aspect-ratio: 1; }
 

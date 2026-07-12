@@ -38,6 +38,7 @@ const navMenu = document.querySelector('.nav-menu');
 const navBackdrop = document.querySelector('.nav-backdrop');
 
 function navOpen() {
+  navMenu.scrollTop = 0;
   hamburger.classList.add('open');
   navMenu.classList.add('open');
   navBackdrop?.classList.add('open');
@@ -60,7 +61,15 @@ if (hamburger && navMenu) {
 
   navMenu.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
-      navClose();
+      const href = link.getAttribute('href') || '';
+      if (href.startsWith('#')) {
+        // Same-page anchor: close nav immediately so smooth-scroll works
+        navClose();
+      } else {
+        // Cross-page: defer close so iOS doesn't cancel navigation
+        // when the nav-menu CSS transition starts during the click
+        requestAnimationFrame(navClose);
+      }
     });
   });
 
