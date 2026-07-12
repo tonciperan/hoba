@@ -317,9 +317,9 @@ function initCarousel(wrapperEl) {
 
   function goTo(newIdx) {
     const perView = spv();
-    const maxIdx = slides.length - perView;
+    const maxIdx = (Math.ceil(slides.length / perView) - 1) * perView;
     if (newIdx > maxIdx) newIdx = 0;
-    if (newIdx < 0) newIdx = Math.max(0, Math.floor(maxIdx / perView) * perView);
+    if (newIdx < 0) newIdx = maxIdx;
     idx = newIdx;
     track.style.transform = `translateX(-${idx * (100 / perView)}%)`;
     updateDots();
