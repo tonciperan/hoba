@@ -17,6 +17,12 @@ function unlockScroll() {
   document.body.style.overflowY = '';
   window.scrollTo(0, _savedScrollY);
 }
+function unlockScrollNoJump() {
+  document.body.style.position = '';
+  document.body.style.top = '';
+  document.body.style.width = '';
+  document.body.style.overflowY = '';
+}
 
 /* ===== NAV SCROLL ===== */
 const nav = document.querySelector('.nav');
@@ -47,6 +53,14 @@ function navClose() {
   unlockScroll();
 }
 
+function navCloseNoJump() {
+  hamburger.classList.remove('open');
+  navMenu.classList.remove('open');
+  navBackdrop?.classList.remove('open');
+  hamburger.setAttribute('aria-expanded', 'false');
+  unlockScrollNoJump();
+}
+
 if (hamburger && navMenu) {
   hamburger.addEventListener('click', () => {
     navMenu.classList.contains('open') ? navClose() : navOpen();
@@ -55,7 +69,16 @@ if (hamburger && navMenu) {
   navBackdrop?.addEventListener('click', navClose);
 
   navMenu.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', navClose);
+    link.addEventListener('click', () => {
+      const href = link.getAttribute('href') || '';
+      // Same-page anchors: restore scroll so smooth-scroll to target works
+      // Page navigation: release body lock without jumping scroll position
+      if (href.startsWith('#')) {
+        navClose();
+      } else {
+        navCloseNoJump();
+      }
+    });
   });
 
   document.addEventListener('keydown', e => {
@@ -130,7 +153,6 @@ function lbPrev() { lbIdx = (lbIdx - 1 + lbItems.length) % lbItems.length; lbSho
 function lbNext() { lbIdx = (lbIdx + 1) % lbItems.length; lbShow(lbIdx); }
 
 if (lightbox && lightboxImg) {
-  // Gallery click
   document.querySelectorAll('.gallery-item').forEach((item, i, arr) => {
     item.addEventListener('click', () => {
       lbOpen(Array.from(arr).map(el => ({
@@ -141,7 +163,6 @@ if (lightbox && lightboxImg) {
     });
   });
 
-  // Menu carousel click
   document.querySelectorAll('.carousel-slide .menu-card').forEach((card, i, arr) => {
     card.addEventListener('click', () => {
       lbOpen(Array.from(arr).map(c => ({
@@ -219,11 +240,25 @@ function initCarousel(wrapperEl) {
   prevBtn?.addEventListener('click', () => goTo(idx - spv()));
   nextBtn?.addEventListener('click', () => goTo(idx + spv()));
 
-  let touchX = 0;
-  track.addEventListener('touchstart', e => { touchX = e.touches[0].clientX; }, { passive: true });
+  let touchX = 0, touchY = 0, touchHoriz = null;
+  track.addEventListener('touchstart', e => {
+    touchX = e.touches[0].clientX;
+    touchY = e.touches[0].clientY;
+    touchHoriz = null;
+  }, { passive: true });
+  track.addEventListener('touchmove', e => {
+    if (touchHoriz === null) {
+      const dx = Math.abs(e.touches[0].clientX - touchX);
+      const dy = Math.abs(e.touches[0].clientY - touchY);
+      touchHoriz = dx > dy;
+    }
+    if (touchHoriz) e.preventDefault();
+  }); // NOT passive — required to preventDefault on horizontal swipe
   track.addEventListener('touchend', e => {
+    if (!touchHoriz) return;
     const diff = touchX - e.changedTouches[0].clientX;
     if (Math.abs(diff) > 50) goTo(idx + (diff > 0 ? spv() : -spv()));
+    touchHoriz = null;
   });
 
   window.addEventListener('resize', () => { idx = 0; buildDots(); goTo(0); });
@@ -231,6 +266,91 @@ function initCarousel(wrapperEl) {
 }
 
 document.querySelectorAll('.carousel-wrapper').forEach(initCarousel);
+
+/* ===== GALLERY CENTER-PEEK CAROUSEL (mobile only) ===== */
+function initGalleryCarousel() {
+  if (window.innerWidth > 768) return;
+
+  const grid = document.querySelector('.gallery-grid');
+  if (!grid) return;
+
+  const items = Array.from(grid.querySelectorAll('.gallery-item'));
+  if (items.length < 2) return;
+
+  // Strip fade-in classes so they don't conflict with carousel opacity
+  items.forEach(item => {
+    item.classList.remove('fade-in', 'fade-in-delay-1', 'fade-in-delay-2', 'fade-in-delay-3', 'fade-in-delay-4');
+  });
+
+  const track = document.createElement('div');
+  track.className = 'gallery-track';
+  items.forEach(item => track.appendChild(item));
+  grid.appendChild(track);
+
+  let idx = 0;
+  let touchStartX = 0, touchStartY = 0, touchHoriz = null;
+  const GAP = 8;
+
+  function setItemStyle(item, isActive) {
+    item.style.opacity = isActive ? '1' : '0.3';
+    item.style.filter = isActive ? '' : 'brightness(0.45)';
+  }
+
+  function goTo(newIdx, animate) {
+    newIdx = Math.max(0, Math.min(newIdx, items.length - 1));
+    idx = newIdx;
+
+    if (animate === false) {
+      track.style.transition = 'none';
+    } else {
+      track.style.transition = 'transform 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+    }
+
+    const itemW = items[0].offsetWidth;
+    const containerW = grid.offsetWidth;
+    const offset = -(idx * (itemW + GAP)) + (containerW - itemW) / 2;
+    track.style.transform = `translateX(${offset}px)`;
+
+    items.forEach((item, i) => setItemStyle(item, i === idx));
+  }
+
+  track.addEventListener('touchstart', e => {
+    touchStartX = e.touches[0].clientX;
+    touchStartY = e.touches[0].clientY;
+    touchHoriz = null;
+  }, { passive: true });
+
+  track.addEventListener('touchmove', e => {
+    if (touchHoriz === null) {
+      const dx = Math.abs(e.touches[0].clientX - touchStartX);
+      const dy = Math.abs(e.touches[0].clientY - touchStartY);
+      touchHoriz = dx > dy;
+    }
+    if (touchHoriz) e.preventDefault();
+  }); // NOT passive
+
+  track.addEventListener('touchend', e => {
+    if (!touchHoriz) return;
+    const diff = touchStartX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 40) goTo(idx + (diff > 0 ? 1 : -1));
+    touchHoriz = null;
+  });
+
+  // Side items: navigate on click (capture phase runs before lightbox bubble handler)
+  items.forEach((item, i) => {
+    item.addEventListener('click', e => {
+      if (i !== idx) {
+        e.stopImmediatePropagation();
+        goTo(i);
+      }
+    }, true);
+  });
+
+  // Init position after layout is computed
+  requestAnimationFrame(() => goTo(0, false));
+}
+
+initGalleryCarousel();
 
 /* ===== REZERVACIJA FORMA (HR) ===== */
 const formHR = document.getElementById('rezervacija-forma');
