@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Book a Table — HOBA bistro&amp;bar Grebaštica</title>
+  <meta name="description" content="Reserve a table at HOBA bistro&bar in Grebaštica, Croatia. Fill in the form and we'll confirm your booking via WhatsApp.">
+
+  <!-- Zamijeni DOMENA.com -->
+  <link rel="alternate" hreflang="hr" href="https://DOMENA.com/rezervacije.html">
+  <link rel="alternate" hreflang="en" href="https://DOMENA.com/en/reservations.html">
+  <link rel="canonical" href="https://DOMENA.com/en/reservations.html">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Inter:wght@300;400;500&display=swap">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<!-- ===== NAVIGATION ===== -->
+<header class="nav" role="banner">
+  <a class="nav-logo" href="index.html" aria-label="HOBA bistro&bar - home">HOBA</a>
+
+  <nav class="nav-menu" id="nav-menu" aria-label="Main navigation">
+    <ul class="nav-links">
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#menu">Menu</a></li>
+      <li><a href="index.html#gallery">Gallery</a></li>
+      <li><a href="index.html#reviews">Reviews</a></li>
+      <li><a href="index.html#location">Contact</a></li>
+      <li><a href="reservations.html" class="btn" style="padding:0.5rem 1.2rem;" aria-current="page">Book a Table</a></li>
+    </ul>
+    <div class="nav-lang">
+      <a href="../rezervacije.html" lang="hr">HR</a>
+      <span>|</span>
+      <a href="reservations.html" class="active" aria-current="page" lang="en">EN</a>
+    </div>
+  </nav>
+
+  <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+<div class="nav-backdrop" aria-hidden="true"></div>
+
+<!-- ===== PAGE HERO ===== -->
+<div class="page-hero">
+  <div class="page-hero-content container">
+    <span class="section-label">Reservations</span>
+    <h1>Book your<br><em>table</em></h1>
+    <p>Fill in the form and we'll confirm via WhatsApp within 30 minutes.</p>
+  </div>
+</div>
+
+<!-- ===== FORM ===== -->
+<section class="reservation-section">
+  <div class="reservation-inner">
+
+    <div>
+      <form
+        id="reservation-form"
+        data-netlify="true"
+        name="reservations"
+        netlify-honeypot="bot-field"
+        novalidate>
+
+        <input type="hidden" name="form-name" value="reservations">
+        <!-- Honeypot for spam protection -->
+        <div style="display:none;" aria-hidden="true">
+          <label>Don't fill this in: <input name="bot-field" tabindex="-1" autocomplete="off"></label>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="ime">Full name *</label>
+            <input type="text" id="ime" name="name" autocomplete="name" required placeholder="Sarah Miller">
+            <span class="form-error">Please enter your full name</span>
+          </div>
+          <div class="form-group">
+            <label for="gosti">Number of guests *</label>
+            <select id="gosti" name="guests" required>
+              <option value="" disabled selected>Select...</option>
+              <option value="1">1 person</option>
+              <option value="2">2 people</option>
+              <option value="3">3 people</option>
+              <option value="4">4 people</option>
+              <option value="5">5 people</option>
+              <option value="6">6 people</option>
+              <option value="7">7 people</option>
+              <option value="8">8 people</option>
+              <option value="9">9 people</option>
+              <option value="10">10 people</option>
+              <option value="10+">10+ people</option>
+            </select>
+            <span class="form-error">Please select number of guests</span>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="datum">Date *</label>
+            <input type="date" id="datum" name="date" required autocomplete="off">
+            <span class="form-error">Please select a date</span>
+          </div>
+          <div class="form-group">
+            <label for="vrijeme">Time *</label>
+            <select id="vrijeme" name="time" required>
+              <option value="" disabled selected>Select...</option>
+              <option value="12:00">12:00</option>
+              <option value="12:30">12:30</option>
+              <option value="13:00">13:00</option>
+              <option value="13:30">13:30</option>
+              <option value="14:00">14:00</option>
+              <option value="14:30">14:30</option>
+              <option value="15:00">15:00</option>
+              <option value="15:30">15:30</option>
+              <option value="16:00">16:00</option>
+              <option value="16:30">16:30</option>
+              <option value="17:00">17:00</option>
+              <option value="17:30">17:30</option>
+              <option value="18:00">18:00</option>
+              <option value="18:30">18:30</option>
+              <option value="19:00">19:00</option>
+              <option value="19:30">19:30</option>
+              <option value="20:00">20:00</option>
+              <option value="20:30">20:30</option>
+              <option value="21:00">21:00</option>
+              <option value="21:30">21:30</option>
+              <option value="22:00">22:00</option>
+            </select>
+            <span class="form-error">Please select a time</span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="telefon">Phone number *</label>
+          <input type="tel" id="telefon" name="phone" autocomplete="tel" required placeholder="+44 7700 900123">
+          <span class="form-error">Please enter your phone number</span>
+        </div>
+
+        <div class="form-group">
+          <label for="napomena">Notes (optional)</label>
+          <textarea id="napomena" name="notes" placeholder="Allergies, dietary requirements, special occasion..."></textarea>
+        </div>
+
+        <button type="submit" class="form-submit">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.118.549 4.107 1.508 5.84L0 24l6.335-1.485A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.009-1.376l-.36-.213-3.755.879.897-3.662-.234-.374A9.818 9.818 0 0112 2.182c5.426 0 9.818 4.392 9.818 9.818 0 5.426-4.392 9.818-9.818 9.818z"/></svg>
+          Send Reservation via WhatsApp
+        </button>
+        <p class="form-note">Clicking the button opens WhatsApp with your reservation pre-filled.<br>Just tap send — we confirm within 30 minutes.</p>
+
+        <div style="display:flex;align-items:center;gap:1rem;margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid var(--border);">
+          <span style="font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);white-space:nowrap;">or call us</span>
+          <a href="tel:+385955502487" class="btn" style="flex:1;text-align:center;display:flex;align-items:center;justify-content:center;gap:0.5rem;">
+            <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg>
+            +385 95 550 2487
+          </a>
+        </div>
+      </form>
+    </div>
+
+    <div class="reservation-info fade-in">
+      <h3>Useful info</h3>
+      <div class="divider"></div>
+
+      <div class="info-block-res">
+        <h4>Opening hours</h4>
+        <!-- Update with actual hours -->
+        <p>Every day<br>12:00 – 23:00</p>
+      </div>
+
+      <div class="info-block-res">
+        <h4>Phone reservations</h4>
+        <!-- Update with actual phone number -->
+        <p><a href="tel:+385955502487">+385 95 550 2487</a></p>
+      </div>
+
+      <div class="info-block-res">
+        <h4>Address</h4>
+        <p>Grebaštica bb<br>22211 Grebaštica<br>Croatia</p>
+      </div>
+
+      <div class="info-block-res">
+        <h4>Instagram</h4>
+        <p><a href="https://www.instagram.com/hoba_bistrobar/" target="_blank" rel="noopener">@hoba_bistrobar</a></p>
+      </div>
+
+      <div class="info-block-res">
+        <h4>Note</h4>
+        <p>For groups of 10 or more, we recommend contacting us a day in advance. Reservations are confirmed after our WhatsApp reply.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <span class="footer-logo">HOBA</span>
+  <p class="footer-tagline">bistro &amp; bar · Grebaštica, Croatia</p>
+  <ul class="footer-links">
+    <li><a href="/en/">Home</a></li>
+    <li><a href="index.html#menu">Menu</a></li>
+    <li><a href="index.html#gallery">Gallery</a></li>
+    <li><a href="index.html#location">Contact</a></li>
+    <li><a href="../rezervacije.html">Hrvatski</a></li>
+  </ul>
+  <div class="footer-payment" aria-label="Payment methods">
+    <span class="footer-pay-item">
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><rect x="1" y="4" width="22" height="16" rx="2"/><path d="M1 10h22"/><path d="M6 15h3M13 15h2"/></svg>
+      Card
+    </span>
+    <span class="footer-pay-sep" aria-hidden="true">·</span>
+    <span class="footer-pay-item">
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/><path d="M6 12h.01M18 12h.01"/></svg>
+      Cash
+    </span>
+  </div>
+  <p class="footer-copy">&copy; <span id="year"></span> HOBA bistro&amp;bar · All rights reserved</p>
+</footer>
+
+<script src="../js/main.js"></script>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

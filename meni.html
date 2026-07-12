@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meni &amp; Cijene — HOBA bistro&amp;bar Grebaštica</title>
+  <meta name="description" content="Pogledajte cijeli meni HOBA bistro&bar restorana u Grebaštici — predjela, morski plodovi, pizza, meso i deserti s cijenama.">
+  <link rel="alternate" hreflang="hr" href="https://DOMENA.com/meni.html">
+  <link rel="alternate" hreflang="en" href="https://DOMENA.com/en/menu.html">
+  <link rel="canonical" href="https://DOMENA.com/meni.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Inter:wght@300;400;500&display=swap">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ===== NAVIGACIJA ===== -->
+<header class="nav" role="banner">
+  <a class="nav-logo" href="index.html" aria-label="HOBA bistro&bar - početna">HOBA</a>
+  <nav class="nav-menu" id="nav-menu" aria-label="Glavna navigacija">
+    <ul class="nav-links">
+      <li><a href="index.html#o-nama">O nama</a></li>
+      <li><a href="meni.html" aria-current="page">Meni</a></li>
+      <li><a href="index.html#galerija">Galerija</a></li>
+      <li><a href="index.html#lokacija">Kontakt</a></li>
+      <li><a href="rezervacije.html" class="btn" style="padding:0.5rem 1.2rem;">Rezerviraj</a></li>
+    </ul>
+    <div class="nav-lang">
+      <a href="meni.html" class="active" aria-current="page" lang="hr">HR</a>
+      <span>|</span>
+      <a href="en/menu.html" lang="en">EN</a>
+    </div>
+  </nav>
+  <button class="hamburger" id="hamburger" aria-label="Otvori izbornik" aria-expanded="false" aria-controls="nav-menu">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+<div class="nav-backdrop" aria-hidden="true"></div>
+
+<!-- ===== HERO ===== -->
+<div class="meni-hero">
+  <div class="meni-hero-content">
+    <span class="section-label">Meni &amp; cijene</span>
+    <h1>Naš meni</h1>
+    <p style="color:var(--text-muted);font-size:0.95rem;">Sve cijene su u eurima. Cijenama nije uključen PDV.</p>
+  </div>
+</div>
+
+<!-- ===== MENI ===== -->
+<section class="meni-section">
+  <div class="meni-inner">
+
+    <p class="meni-napomena">
+      Naši jelovnici mijenjaju se prema dostupnosti svježe ribe i sezonskih namirnica. Za alergene i posebne dijete molimo kontaktirajte nas unaprijed.<br>
+      <strong style="color:var(--gold);">* Janjetina i hobotnica ispod peke — narudžba potrebna dan ranije.</strong>
+    </p>
+
+    <!-- PREDJELA -->
+    <div class="meni-kategorija fade-in">
+      <h2 class="meni-kategorija-naziv">Predjela</h2>
+
+      <div class="meni-red">
+        <span class="meni-naziv">Tartar od tune</span>
+        <span class="meni-opis">avokado, kapari, sezam, soja</span>
+        <span class="meni-tocke"></span>
+        <span class="meni-cijena">16 €</span>
+      </div>
+      <div class="meni-red">
+        <span class="meni-naziv">Tartar od tune s burratom</span>
+        <span class="meni-opis">avokado, kapari, sezam, burrata</span>
+        <span class="meni-tocke"></span>
+        <span class="meni-cijena">19 €</span>
+      </div>
+      <div class="meni-red">
+        <span class="meni-naziv">Carpaccio od tune</span>
+        <span class="meni-opis">kapari, limun, maslinovo ulje</span>
+        <span class="meni-tocke"></span>
+        <span class="meni-cijena">14 €</span>
+      </div>
+      <div class="meni-red">
+        <span class="meni-naziv">Jakopske kapice</span>
+        <span class="meni-opis">maslinovo ulje, češnjak, peršin</span>
+        <span class="meni-tocke"></span>
+        <span class="meni-cijena">18 €</span>
+      </div>
+      <div class="meni-red">
+        <span class="meni-naziv">Kamenice</span>
+        <span class="meni-opis">limun, šalot, tabasco</span>
+        <span class="meni-tocke"></span>
+        <span class="meni-cijena">4 € / kom</span>
+      </div>
+      <div class="meni-red">
+        <span class="meni-naziv">Hladna predjela za dvoje</span>
+        <span class="meni-opis">domaći pršut, paški sir, salama, masline</span>
+        <span class="meni-tocke"></span>
+        <span class="meni-cijena">14 €</span>
+      </div>
+      <div class="meni-red">
+        <span class="meni-naziv">Pršut s pjatom</span>
+        <span class="meni-opis">dalmatinski pršut, rukola, masline</span>
+        <span class="meni-tocke"></span>
+        <span class="meni-cijena">12 €</span>
+      </div>
+    </div>
+
+    <!-- JUHE -->
+    <div class="meni-kategorija fade-in">
+      <h2 class="meni-kategorija-naziv">Juhe</h2>
+
+      <div class="meni-red">
+        <span class="meni-naziv">Brudet od ribe</span>
+        <span class="meni-opis">miješana svježa riba, paradajz, bijelo vino</span>
+        <span class="meni-tocke"></span>
+        <span class="meni-cijena">10 €</span>
+      </div>
+      <div class="meni-red">
+        <span class="meni-naziv">Krem juha od škampa</span>
+        <span class="meni-opis">svježi škampi, vrhnje, šafran</span>
+        <span class="meni-tocke"></span>
+        <span class="meni-cijena">10 €</span>
+      </div>
+    </div>
+
+    <!-- MORSKI PLODOVI -->
+    <div class="meni-kategorija fade-in">
+      <h2 class="meni-kategorija-naziv">Morski plodovi &amp; riba</h2>
+
+      <div class="meni-red">
+        <span class="meni-naziv">Hobotnica iz peke *</span>
+        <span class="meni-opis">krumpir, kapula, mediteranski začini</span>
+        <span class="meni-tocke"></span>
+        <span class="meni-cijena">18 €</span>
+      </div>
+      <div class="meni-red">
+        <span class="meni-naziv">Hobotnica na žaru</span>
+        <span class="meni-opis">blitva, krumpir, maslinovo ulje</span>
+        <span class="meni-tocke"></span>
+        <span class="meni-cijena">18 €</span>
+      </div>
+      <div class="meni-red">
+        <span class="meni-naziv">Jastog s tjesteninom</span>
+        <span class="meni-opis">svježi jadranski jastog, buzara, bijelo vino</span>
+        <span class="meni-tocke"></span>
+        <span class="meni-cijena">tržišna cijena</span>
+      </div>
+      <div class="meni-red">
+        <span class="meni-naziv">Jastog na žaru</span>
+        <span class="meni-opis">maslinovo ulje, limun, šalot</span>
+        <span class="meni-tocke"></span>
+        <span class="meni-cijena">tržišna cijena</span>
+      </div>
+      <div class="meni-red">
+        <span class="meni-naziv">Škampi na žaru</span>
+        <span class="meni-opis">maslinovo ulje, limun, češnjak</span>
+        <span class="meni-tocke"></span>
+        <span class="meni-cijena">18 €</span>
+      </div>
+      <div class="meni-red">
+        <span class="meni-naziv">Miješana riba na žaru</span>
+        <span class="meni-opis">orada, brancin, liganj — prema ponudi dana</span>
+        <span class="meni-tocke"></span>
+        <span class="meni-cijena">od 24 €</span>
+      </div>
+      <div class="meni-red">
+        <span class="meni-naziv">Orada na žaru</span>
+        <span class="meni-opis">blitva s krumpirom, maslinovo ulje</span>
+        <span class="meni-tocke"></span>
+        <span class="meni-cijena">24 €</span>
+      </div>
+      <div class="meni-red">
+        <span class="meni-naziv">Brancin na žaru</span>
+        <span class="meni-opis">blitva s krumpirom, maslinovo ulje</span>
+        <span class="meni-tocke"></span>
+        <span class="meni-cijena">26 €</span>
+      </div>
+      <div class="meni-red">
+        <span class="meni-naziv">Liganj na žaru</span>
+        <span class="meni-opis">blitva, krumpir, limun</span>
+        <span class="meni-tocke"></span>
+        <span class="meni-cijena">16 €</span>
+      </div>
+      <div class="meni-red">
+        <span class="meni-naziv">Pohani liganj s tartar umakom</span>
+        <span class="meni-opis">hrskavi liganj, domaći tartar umak</span>
+        <span class="meni-tocke"></span>
+        <span class="meni-cijena">14 €</span>
+      </div>
+    </div>
+
+    <!-- TJESTENINE I RIŽOTI -->
+    <div class="meni-kategorija fade-in">
+      <h2 class="meni-kategorija-naziv">Tjestenine &amp; rižoti</h2>
+
+      <div class="meni-red">
+        <span class="meni-naziv">Crni rižoto</span>
+        <span class="meni-opis">tinta sipe, škampi, plodovi mora</span>
+        <span class="meni-tocke"></span>
+        <span class="meni-cijena">16 €</span>
+      </div>
+      <div class="meni-red">
+        <span class="meni-naziv">Rižoto sa škampima</span>
+        <span class="meni-opis">svježi škampi, bijelo vino, parmezanom</span>
+        <span class="meni-tocke"></span>
+        <span class="meni-cijena">16 €</span>
+      </div>
+      <div class="meni-red">
+        <span class="meni-naziv">Spageti vongole</span>
+        <span class="meni-opis">dagnje vongole, bijelo vino, češnjak, peršin</span>
+        <span class="meni-tocke"></span>
+        <span class="meni-cijena">15 €</span>
+      </div>
+      <div class="meni-red">
+        <span class="meni-naziv">Spageti s plodovima mora</span>
+        <span class="meni-opis">škampi, dagnje, sipa, rajčica</span>
+        <span class="meni-tocke"></span>
+        <span class="meni-cijena">16 €</span>
+      </div>
+      <div class="meni-red">
+        <span class="meni-naziv">Tjestenina sa škampima buzara</span>
+        <span class="meni-opis">svježi škampi, buzara, bijelo vino</span>
+        <span class="meni-tocke"></span>
+        <span class="meni-cijena">17 €</span>
+      </div>
+      <div class="meni-red">
+        <span class="meni-naziv">Crni njoki s rajčicom</span>
+        <span class="meni-opis">domaći crni njoki, svježa rajčica, bosiljak</span>
+        <span class="meni-tocke"></span>
+        <span class="meni-cijena">14 €</span>
+      </div>
+    </div>
+
+    <!-- PIZZA -->
+    <div class="meni-kategorija fade-in">
+      <h2 class="meni-kategorija-naziv">Pizza iz krušne peći</h2>
+
+      <div class="meni-red">
+        <span class="meni-naziv">Margherita</span>
+        <span class="meni-opis">San Marzano rajčica, mozzarella, bosiljak</span>
+        <span class="meni-tocke"></span>
+        <span class="meni-cijena">10 €</span>
+      </div>
+      <div class="meni-red">
+        <span class="meni-naziv">Pizza s pršutom</span>
+        <span class="meni-opis">rajčica, mozzarella, domaći pršut, rukola</span>
+        <span class="meni-tocke"></span>
+        <span class="meni-cijena">14 €</span>
+      </div>
+      <div class="meni-red">
+        <span class="meni-naziv">Pizza s gljivama</span>
+        <span class="meni-opis">bijela baza, šampinjoni, karambelizirani luk</span>
+        <span class="meni-tocke"></span>
+        <span class="meni-cijena">12 €</span>
+      </div>
+      <div class="meni-red">
+        <span class="meni-naziv">Pizza s mortadelom i burratom</span>
+        <span class="meni-opis">rajčica, mozzarella, mortadela, burrata</span>
+        <span class="meni-tocke"></span>
+        <span class="meni-cijena">15 €</span>
+      </div>
+      <div class="meni-red">
+        <span class="meni-naziv">Bijela pizza s carpacciom</span>
+        <span class="meni-opis">bijela baza, mozzarella, carpaccio od tune</span>
+        <span class="meni-tocke"></span>
+        <span class="meni-cijena">16 €</span>
+      </div>
+      <div class="meni-red">
+        <span class="meni-naziv">Pizza s paprikom i salamom</span>
+        <span class="meni-opis">rajčica, mozzarella, salama, paprika</span>
+        <span class="meni-tocke"></span>
+        <span class="meni-cijena">13 €</span>
+      </div>
+    </div>
+
+    <!-- MESO -->
+    <div class="meni-kategorija fade-in">
+      <h2 class="meni-kategorija-naziv">Meso s roštilja</h2>
+
+      <div class="meni-red">
+        <span class="meni-naziv">Biftek s gljivama</span>
+        <span class="meni-opis">odležani biftek, umak od divljih gljiva, krumpir</span>
+        <span class="meni-tocke"></span>
+        <span class="meni-cijena">26 €</span>
+      </div>
+      <div class="meni-red">
+        <span class="meni-naziv">T-bone steak</span>
+        <span class="meni-opis">500g, rozmarin, maslinovo ulje, prilog po izboru</span>
+        <span class="meni-tocke"></span>
+        <span class="meni-cijena">38 €</span>
+      </div>
+      <div class="meni-red">
+        <span class="meni-naziv">Janjetina ispod peke *</span>
+        <span class="meni-opis">mlada janjetina, rozmarin, krumpir</span>
+        <span class="meni-tocke"></span>
+        <span class="meni-cijena">24 €</span>
+      </div>
+      <div class="meni-red">
+        <span class="meni-naziv">Burger na focaccia</span>
+        <span class="meni-opis">domaći burger, burrata, rukola, focaccia</span>
+        <span class="meni-tocke"></span>
+        <span class="meni-cijena">15 €</span>
+      </div>
+    </div>
+
+    <!-- SALATE -->
+    <div class="meni-kategorija fade-in">
+      <h2 class="meni-kategorija-naziv">Salate</h2>
+
+      <div class="meni-red">
+        <span class="meni-naziv">Salata s hobotnicom</span>
+        <span class="meni-opis">hobotnica, rajčica, kapula, kapari, maslinovo ulje</span>
+        <span class="meni-tocke"></span>
+        <span class="meni-cijena">14 €</span>
+      </div>
+      <div class="meni-red">
+        <span class="meni-naziv">Salata s hobotnicom i škampima</span>
+        <span class="meni-opis">hobotnica, škampi, miks salate, vinaigrette</span>
+        <span class="meni-tocke"></span>
+        <span class="meni-cijena">16 €</span>
+      </div>
+    </div>
+
+    <!-- DESERTI -->
+    <div class="meni-kategorija fade-in">
+      <h2 class="meni-kategorija-naziv">Deserti</h2>
+
+      <div class="meni-red">
+        <span class="meni-naziv">Čokoladni lava cake</span>
+        <span class="meni-opis">tekuće čokoladno središte, vanila sladoled</span>
+        <span class="meni-tocke"></span>
+        <span class="meni-cijena">7 €</span>
+      </div>
+      <div class="meni-red">
+        <span class="meni-naziv">Cheesecake</span>
+        <span class="meni-opis">kremasti cheesecake, coulis od bobičastog voća</span>
+        <span class="meni-tocke"></span>
+        <span class="meni-cijena">7 €</span>
+      </div>
+      <div class="meni-red">
+        <span class="meni-naziv">Palačinka</span>
+        <span class="meni-opis">čokolada ili bobičasto voće i šlag</span>
+        <span class="meni-tocke"></span>
+        <span class="meni-cijena">6 €</span>
+      </div>
+    </div>
+
+    <!-- NAPICI -->
+    <div class="meni-kategorija fade-in">
+      <h2 class="meni-kategorija-naziv">Napici</h2>
+
+      <div class="meni-red">
+        <span class="meni-naziv">Espresso</span>
+        <span class="meni-tocke"></span>
+        <span class="meni-cijena">1.5 €</span>
+      </div>
+      <div class="meni-red">
+        <span class="meni-naziv">Cappuccino / Latte</span>
+        <span class="meni-tocke"></span>
+        <span class="meni-cijena">2.5 €</span>
+      </div>
+      <div class="meni-red">
+        <span class="meni-naziv">Sokovi / Mineralna</span>
+        <span class="meni-tocke"></span>
+        <span class="meni-cijena">od 3 €</span>
+      </div>
+      <div class="meni-red">
+        <span class="meni-naziv">Craft pivo</span>
+        <span class="meni-tocke"></span>
+        <span class="meni-cijena">od 5 €</span>
+      </div>
+      <div class="meni-red">
+        <span class="meni-naziv">Gin tonic</span>
+        <span class="meni-opis">premium gin, tonic, botanički dodaci</span>
+        <span class="meni-tocke"></span>
+        <span class="meni-cijena">9 €</span>
+      </div>
+      <div class="meni-red">
+        <span class="meni-naziv">Espresso martini</span>
+        <span class="meni-opis">vodka, espresso, kahlua</span>
+        <span class="meni-tocke"></span>
+        <span class="meni-cijena">10 €</span>
+      </div>
+      <div class="meni-red">
+        <span class="meni-naziv">Vino — čaša</span>
+        <span class="meni-opis">bijelo, roze ili crno — pita konobara za ponudu</span>
+        <span class="meni-tocke"></span>
+        <span class="meni-cijena">od 5 €</span>
+      </div>
+      <div class="meni-red">
+        <span class="meni-naziv">Vino — boca</span>
+        <span class="meni-opis">domaća dalmatinska i mediteranska vina</span>
+        <span class="meni-tocke"></span>
+        <span class="meni-cijena">od 25 €</span>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-top:3rem;padding-top:2rem;border-top:1px solid var(--border);">
+      <a href="rezervacije.html" class="btn btn-solid">Rezerviraj stol</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <span class="footer-logo">HOBA</span>
+  <p class="footer-tagline">bistro &amp; bar · Grebaštica</p>
+  <ul class="footer-links">
+    <li><a href="index.html">Početna</a></li>
+    <li><a href="index.html#galerija">Galerija</a></li>
+    <li><a href="rezervacije.html">Rezervacije</a></li>
+    <li><a href="index.html#lokacija">Kontakt</a></li>
+    <li><a href="en/menu.html">English</a></li>
+  </ul>
+  <div class="footer-payment" aria-label="Načini plaćanja">
+    <span class="footer-pay-item">
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><rect x="1" y="4" width="22" height="16" rx="2"/><path d="M1 10h22"/><path d="M6 15h3M13 15h2"/></svg>
+      Kartica
+    </span>
+    <span class="footer-pay-sep" aria-hidden="true">·</span>
+    <span class="footer-pay-item">
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/><path d="M6 12h.01M18 12h.01"/></svg>
+      Gotovina
+    </span>
+  </div>
+  <p class="footer-copy">&copy; <span id="year"></span> HOBA bistro&amp;bar · Sva prava pridržana</p>
+</footer>
+
+<script src="js/main.js"></script>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
