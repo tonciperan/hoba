@@ -563,13 +563,14 @@ section { padding: var(--section-pad); }
   overflow: hidden;
   flex: 1;
   min-width: 0;
+  touch-action: pan-y;
+  overscroll-behavior-x: none;
 }
 
 .carousel-track {
   display: flex;
-  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   will-change: transform;
-  touch-action: pan-y;
 }
 
 .carousel-slide {
@@ -631,6 +632,12 @@ section { padding: var(--section-pad); }
   .menu-carousel,
   .reviews-carousel { gap: 0.5rem; padding: 0 0.25rem; }
   .carousel-btn { width: 40px; height: 40px; }
+  .menu-carousel .carousel-slide {
+    flex: 0 0 78vw;
+    padding: 0 6px;
+    transition: opacity 0.3s ease, filter 0.3s ease, transform 0.3s ease;
+    transform-origin: center center;
+  }
 }
 
 /* ===== GALERIJA / GALLERY ===== */
@@ -1317,13 +1324,13 @@ textarea { resize: vertical; min-height: 110px; }
     position: relative;
     overflow: hidden;
     margin: 0 -1rem;
+    touch-action: pan-y;
+    overscroll-behavior-x: none;
   }
   .gallery-track {
     display: flex;
     align-items: center;
     will-change: transform;
-    transition: transform 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    touch-action: pan-y;
   }
   .gallery-item {
     flex: 0 0 78vw;

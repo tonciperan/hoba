@@ -187,9 +187,105 @@ if (lightbox && lightboxImg) {
   });
 }
 
+/* ===== MENU PEEK CAROUSEL (mobile only) ===== */
+function initMenuPeekCarousel(wrapperEl) {
+  const track = wrapperEl.querySelector('.carousel-track');
+  const viewport = wrapperEl.querySelector('.carousel-viewport');
+  const dotsEl = wrapperEl.querySelector('.carousel-dots');
+  if (!track || !viewport) return;
+
+  const origSlides = Array.from(track.querySelectorAll('.carousel-slide'));
+  const n = origSlides.length;
+  if (n < 2) return;
+
+  const cloneLast = origSlides[n - 1].cloneNode(true);
+  const cloneFirst = origSlides[0].cloneNode(true);
+  [cloneLast, cloneFirst].forEach(c => c.setAttribute('aria-hidden', 'true'));
+  track.insertBefore(cloneLast, origSlides[0]);
+  track.appendChild(cloneFirst);
+
+  const all = Array.from(track.querySelectorAll('.carousel-slide'));
+  let idx = 1;
+  let jumping = false;
+
+  function setStyle(slide, active) {
+    slide.style.opacity = active ? '1' : '0.55';
+    slide.style.transform = active ? 'scale(1)' : 'scale(0.92)';
+    slide.style.filter = active ? '' : 'brightness(0.45)';
+  }
+
+  function calcOffset(i) {
+    const sw = all[0].offsetWidth;
+    const vw = viewport.offsetWidth;
+    return -(i * sw) + (vw - sw) / 2;
+  }
+
+  function goTo(i, animate = true) {
+    track.style.transition = animate ? 'transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94)' : 'none';
+    idx = i;
+    track.style.transform = `translateX(${calcOffset(i)}px)`;
+    all.forEach((s, j) => setStyle(s, j === i));
+    if (dotsEl) {
+      const di = i <= 0 ? n - 1 : i >= n + 1 ? 0 : i - 1;
+      dotsEl.querySelectorAll('.carousel-dot').forEach((d, j) => d.classList.toggle('active', j === di));
+    }
+  }
+
+  if (dotsEl) {
+    dotsEl.innerHTML = '';
+    for (let i = 0; i < n; i++) {
+      const d = document.createElement('button');
+      d.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+      d.setAttribute('aria-label', `Slika ${i + 1}`);
+      d.addEventListener('click', () => goTo(i + 1));
+      dotsEl.appendChild(d);
+    }
+  }
+
+  wrapperEl.querySelector('.carousel-prev')?.addEventListener('click', () => goTo(idx - 1));
+  wrapperEl.querySelector('.carousel-next')?.addEventListener('click', () => goTo(idx + 1));
+
+  track.addEventListener('transitionend', e => {
+    if (e.target !== track || e.propertyName !== 'transform' || jumping) return;
+    if (idx === 0) {
+      jumping = true; goTo(n, false);
+      requestAnimationFrame(() => requestAnimationFrame(() => { jumping = false; }));
+    } else if (idx === n + 1) {
+      jumping = true; goTo(1, false);
+      requestAnimationFrame(() => requestAnimationFrame(() => { jumping = false; }));
+    }
+  });
+
+  let tx = 0, ty = 0;
+  viewport.addEventListener('touchstart', e => { tx = e.touches[0].clientX; ty = e.touches[0].clientY; }, { passive: true });
+  viewport.addEventListener('touchmove', e => {
+    if (!e.cancelable) return;
+    const dx = tx - e.touches[0].clientX;
+    const dy = ty - e.touches[0].clientY;
+    if (Math.abs(dx) > 8 && Math.abs(dx) > Math.abs(dy)) e.preventDefault();
+  }, { passive: false });
+  viewport.addEventListener('touchend', e => {
+    const dx = tx - e.changedTouches[0].clientX;
+    const dy = ty - e.changedTouches[0].clientY;
+    if (Math.abs(dx) > 30 && Math.abs(dx) > Math.abs(dy)) goTo(idx + (dx > 0 ? 1 : -1));
+  });
+
+  all.forEach((s, i) => {
+    s.addEventListener('click', e => {
+      if (i !== idx) { e.stopImmediatePropagation(); goTo(i); }
+    }, true);
+  });
+
+  requestAnimationFrame(() => goTo(1, false));
+}
+
 /* ===== CAROUSEL FACTORY ===== */
 function initCarousel(wrapperEl) {
   if (!wrapperEl) return;
+  if (window.innerWidth <= 768 && wrapperEl.querySelector('.menu-carousel')) {
+    initMenuPeekCarousel(wrapperEl);
+    return;
+  }
   const track = wrapperEl.querySelector('.carousel-track');
   if (!track) return;
   const slides = Array.from(track.querySelectorAll('.carousel-slide'));
@@ -232,15 +328,22 @@ function initCarousel(wrapperEl) {
   prevBtn?.addEventListener('click', () => goTo(idx - spv()));
   nextBtn?.addEventListener('click', () => goTo(idx + spv()));
 
+  const touchTarget = wrapperEl.querySelector('.carousel-viewport') || track;
   let touchX = 0, touchY = 0;
-  track.addEventListener('touchstart', e => {
+  touchTarget.addEventListener('touchstart', e => {
     touchX = e.touches[0].clientX;
     touchY = e.touches[0].clientY;
   }, { passive: true });
-  track.addEventListener('touchend', e => {
+  touchTarget.addEventListener('touchmove', e => {
+    if (!e.cancelable) return;
+    const dx = touchX - e.touches[0].clientX;
+    const dy = touchY - e.touches[0].clientY;
+    if (Math.abs(dx) > 8 && Math.abs(dx) > Math.abs(dy)) e.preventDefault();
+  }, { passive: false });
+  touchTarget.addEventListener('touchend', e => {
     const dx = touchX - e.changedTouches[0].clientX;
     const dy = touchY - e.changedTouches[0].clientY;
-    if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) {
+    if (Math.abs(dx) > 30 && Math.abs(dx) > Math.abs(dy)) {
       goTo(idx + (dx > 0 ? spv() : -spv()));
     }
   });
@@ -262,73 +365,80 @@ function initGalleryCarousel() {
   const grid = document.querySelector('.gallery-grid');
   if (!grid) return;
 
-  const items = Array.from(grid.querySelectorAll('.gallery-item'));
-  if (items.length < 2) return;
+  const origItems = Array.from(grid.querySelectorAll('.gallery-item'));
+  if (origItems.length < 2) return;
 
-  // Strip fade-in classes so they don't conflict with carousel opacity
-  items.forEach(item => {
+  origItems.forEach(item => {
     item.classList.remove('fade-in', 'fade-in-delay-1', 'fade-in-delay-2', 'fade-in-delay-3', 'fade-in-delay-4');
   });
 
   const track = document.createElement('div');
   track.className = 'gallery-track';
-  items.forEach(item => track.appendChild(item));
+
+  const cloneLast = origItems[origItems.length - 1].cloneNode(true);
+  const cloneFirst = origItems[0].cloneNode(true);
+  [cloneLast, cloneFirst].forEach(c => c.setAttribute('aria-hidden', 'true'));
+  track.appendChild(cloneLast);
+  origItems.forEach(item => track.appendChild(item));
+  track.appendChild(cloneFirst);
   grid.appendChild(track);
 
-  let idx = 0;
-  const GAP = 12;
+  const all = Array.from(track.children);
+  const n = origItems.length;
+  let idx = 1;
+  let jumping = false;
 
-  function setItemStyle(item, isActive) {
-    item.style.opacity = isActive ? '1' : '0.5';
-    item.style.filter = isActive ? '' : 'brightness(0.35)';
-    item.style.transform = isActive ? 'scale(1)' : 'scale(0.88)';
+  function setStyle(item, active) {
+    item.style.opacity = active ? '1' : '0.5';
+    item.style.filter = active ? '' : 'brightness(0.35)';
+    item.style.transform = active ? 'scale(1)' : 'scale(0.88)';
   }
 
-  function goTo(newIdx, animate) {
-    newIdx = Math.max(0, Math.min(newIdx, items.length - 1));
-    idx = newIdx;
-
-    if (animate === false) {
-      track.style.transition = 'none';
-    } else {
-      track.style.transition = 'transform 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
-    }
-
-    const itemW = items[0].offsetWidth;
-    const containerW = grid.offsetWidth;
-    const offset = -(idx * (itemW + GAP)) + (containerW - itemW) / 2;
-    track.style.transform = `translateX(${offset}px)`;
-
-    items.forEach((item, i) => setItemStyle(item, i === idx));
+  function calcOffset(i) {
+    const iw = all[0].offsetWidth;
+    const cw = grid.offsetWidth;
+    return -(i * iw) + (cw - iw) / 2;
   }
 
-  let touchStartX = 0, touchStartY = 0;
+  function goTo(i, animate = true) {
+    track.style.transition = animate ? 'transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94)' : 'none';
+    idx = i;
+    track.style.transform = `translateX(${calcOffset(i)}px)`;
+    all.forEach((item, j) => setStyle(item, j === i));
+  }
 
-  track.addEventListener('touchstart', e => {
-    touchStartX = e.touches[0].clientX;
-    touchStartY = e.touches[0].clientY;
-  }, { passive: true });
-
-  track.addEventListener('touchend', e => {
-    const dx = touchStartX - e.changedTouches[0].clientX;
-    const dy = touchStartY - e.changedTouches[0].clientY;
-    if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) {
-      goTo(idx + (dx > 0 ? 1 : -1));
+  track.addEventListener('transitionend', e => {
+    if (e.target !== track || e.propertyName !== 'transform' || jumping) return;
+    if (idx === 0) {
+      jumping = true; goTo(n, false);
+      requestAnimationFrame(() => requestAnimationFrame(() => { jumping = false; }));
+    } else if (idx === n + 1) {
+      jumping = true; goTo(1, false);
+      requestAnimationFrame(() => requestAnimationFrame(() => { jumping = false; }));
     }
   });
 
-  // Side items: navigate on click (capture phase runs before lightbox bubble handler)
-  items.forEach((item, i) => {
+  let tx = 0, ty = 0;
+  grid.addEventListener('touchstart', e => { tx = e.touches[0].clientX; ty = e.touches[0].clientY; }, { passive: true });
+  grid.addEventListener('touchmove', e => {
+    if (!e.cancelable) return;
+    const dx = tx - e.touches[0].clientX;
+    const dy = ty - e.touches[0].clientY;
+    if (Math.abs(dx) > 8 && Math.abs(dx) > Math.abs(dy)) e.preventDefault();
+  }, { passive: false });
+  grid.addEventListener('touchend', e => {
+    const dx = tx - e.changedTouches[0].clientX;
+    const dy = ty - e.changedTouches[0].clientY;
+    if (Math.abs(dx) > 30 && Math.abs(dx) > Math.abs(dy)) goTo(idx + (dx > 0 ? 1 : -1));
+  });
+
+  all.forEach((item, i) => {
     item.addEventListener('click', e => {
-      if (i !== idx) {
-        e.stopImmediatePropagation();
-        goTo(i);
-      }
+      if (i !== idx) { e.stopImmediatePropagation(); goTo(i); }
     }, true);
   });
 
-  // Init position after layout is computed
-  requestAnimationFrame(() => goTo(0, false));
+  requestAnimationFrame(() => goTo(1, false));
 }
 
 initGalleryCarousel();
