@@ -1,5 +1,5 @@
 /* ===== WHATSAPP BROJ — zamijeni stvarnim brojem prije deploya ===== */
-const WHATSAPP_BROJ = '385955502487';
+const WHATSAPP_BROJ = '3850994439530';
 
 /* ===== iOS SCROLL LOCK ===== */
 let _savedScrollY = 0;
@@ -38,7 +38,6 @@ const navMenu = document.querySelector('.nav-menu');
 const navBackdrop = document.querySelector('.nav-backdrop');
 
 function navOpen() {
-  lockScroll();
   hamburger.classList.add('open');
   navMenu.classList.add('open');
   navBackdrop?.classList.add('open');
@@ -50,15 +49,6 @@ function navClose() {
   navMenu.classList.remove('open');
   navBackdrop?.classList.remove('open');
   hamburger.setAttribute('aria-expanded', 'false');
-  unlockScroll();
-}
-
-function navCloseNoJump() {
-  hamburger.classList.remove('open');
-  navMenu.classList.remove('open');
-  navBackdrop?.classList.remove('open');
-  hamburger.setAttribute('aria-expanded', 'false');
-  unlockScrollNoJump();
 }
 
 if (hamburger && navMenu) {
@@ -70,14 +60,7 @@ if (hamburger && navMenu) {
 
   navMenu.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
-      const href = link.getAttribute('href') || '';
-      // Same-page anchors: restore scroll so smooth-scroll to target works
-      // Page navigation: release body lock without jumping scroll position
-      if (href.startsWith('#')) {
-        navClose();
-      } else {
-        navCloseNoJump();
-      }
+      navClose();
     });
   });
 
@@ -240,28 +223,24 @@ function initCarousel(wrapperEl) {
   prevBtn?.addEventListener('click', () => goTo(idx - spv()));
   nextBtn?.addEventListener('click', () => goTo(idx + spv()));
 
-  let touchX = 0, touchY = 0, touchHoriz = null;
+  let touchX = 0, touchY = 0;
   track.addEventListener('touchstart', e => {
     touchX = e.touches[0].clientX;
     touchY = e.touches[0].clientY;
-    touchHoriz = null;
   }, { passive: true });
-  track.addEventListener('touchmove', e => {
-    if (touchHoriz === null) {
-      const dx = Math.abs(e.touches[0].clientX - touchX);
-      const dy = Math.abs(e.touches[0].clientY - touchY);
-      touchHoriz = dx > dy;
-    }
-    if (touchHoriz) e.preventDefault();
-  }); // NOT passive — required to preventDefault on horizontal swipe
   track.addEventListener('touchend', e => {
-    if (!touchHoriz) return;
-    const diff = touchX - e.changedTouches[0].clientX;
-    if (Math.abs(diff) > 50) goTo(idx + (diff > 0 ? spv() : -spv()));
-    touchHoriz = null;
+    const dx = touchX - e.changedTouches[0].clientX;
+    const dy = touchY - e.changedTouches[0].clientY;
+    if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) {
+      goTo(idx + (dx > 0 ? spv() : -spv()));
+    }
   });
 
-  window.addEventListener('resize', () => { idx = 0; buildDots(); goTo(0); });
+  // Only reset on width changes — height-only changes (mobile browser chrome) must not reset position
+  let lastW = window.innerWidth;
+  window.addEventListener('resize', () => {
+    if (window.innerWidth !== lastW) { lastW = window.innerWidth; idx = 0; buildDots(); goTo(0); }
+  }, { passive: true });
   buildDots();
 }
 
@@ -288,12 +267,12 @@ function initGalleryCarousel() {
   grid.appendChild(track);
 
   let idx = 0;
-  let touchStartX = 0, touchStartY = 0, touchHoriz = null;
-  const GAP = 8;
+  const GAP = 12;
 
   function setItemStyle(item, isActive) {
-    item.style.opacity = isActive ? '1' : '0.3';
-    item.style.filter = isActive ? '' : 'brightness(0.45)';
+    item.style.opacity = isActive ? '1' : '0.5';
+    item.style.filter = isActive ? '' : 'brightness(0.35)';
+    item.style.transform = isActive ? 'scale(1)' : 'scale(0.88)';
   }
 
   function goTo(newIdx, animate) {
@@ -314,26 +293,19 @@ function initGalleryCarousel() {
     items.forEach((item, i) => setItemStyle(item, i === idx));
   }
 
+  let touchStartX = 0, touchStartY = 0;
+
   track.addEventListener('touchstart', e => {
     touchStartX = e.touches[0].clientX;
     touchStartY = e.touches[0].clientY;
-    touchHoriz = null;
   }, { passive: true });
 
-  track.addEventListener('touchmove', e => {
-    if (touchHoriz === null) {
-      const dx = Math.abs(e.touches[0].clientX - touchStartX);
-      const dy = Math.abs(e.touches[0].clientY - touchStartY);
-      touchHoriz = dx > dy;
-    }
-    if (touchHoriz) e.preventDefault();
-  }); // NOT passive
-
   track.addEventListener('touchend', e => {
-    if (!touchHoriz) return;
-    const diff = touchStartX - e.changedTouches[0].clientX;
-    if (Math.abs(diff) > 40) goTo(idx + (diff > 0 ? 1 : -1));
-    touchHoriz = null;
+    const dx = touchStartX - e.changedTouches[0].clientX;
+    const dy = touchStartY - e.changedTouches[0].clientY;
+    if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) {
+      goTo(idx + (dx > 0 ? 1 : -1));
+    }
   });
 
   // Side items: navigate on click (capture phase runs before lightbox bubble handler)

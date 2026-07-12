@@ -306,6 +306,7 @@ section { padding: var(--section-pad); }
 .nav-backdrop.open {
   opacity: 1;
   pointer-events: auto;
+  touch-action: none;
 }
 
 /* ===== HERO ===== */
@@ -576,6 +577,7 @@ section { padding: var(--section-pad); }
   display: flex;
   transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   will-change: transform;
+  touch-action: pan-y;
 }
 
 .carousel-slide {
@@ -1326,17 +1328,19 @@ textarea { resize: vertical; min-height: 110px; }
   }
   .gallery-track {
     display: flex;
-    align-items: stretch;
+    align-items: center;
     will-change: transform;
     transition: transform 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    touch-action: pan-y;
   }
   .gallery-item {
-    flex: 0 0 80vw;
-    padding: 0 4px;
+    flex: 0 0 78vw;
+    padding: 0 6px;
     break-inside: unset;
     margin-bottom: 0;
-    transition: opacity 0.4s ease, filter 0.4s ease;
+    transition: opacity 0.4s ease, filter 0.4s ease, transform 0.4s ease;
     cursor: pointer;
+    transform-origin: center center;
   }
   .gallery-item img {
     width: 100%;
