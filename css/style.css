@@ -316,7 +316,7 @@ section { padding: var(--section-pad); }
 .hero-bg {
   position: absolute;
   inset: 0;
-  background-image: url('../images/pizza-krusna-pec-2.jpg');
+  background-image: url('../images/pizza-krusna-pec-2.webp');
   background-size: cover;
   background-position: center;
   transform: scale(1.05);
@@ -1020,7 +1020,7 @@ section { padding: var(--section-pad); }
   content: '';
   position: absolute;
   inset: 0;
-  background-image: url('../images/postavljeni-stolovi.jpg');
+  background-image: url('../images/postavljeni-stolovi.webp');
   background-size: cover;
   background-position: center 40%;
   opacity: 0.25;
@@ -1210,7 +1210,7 @@ textarea { resize: vertical; min-height: 110px; }
   content: '';
   position: absolute;
   inset: 0;
-  background-image: url('../images/pizza-krusna-pec-2.jpg');
+  background-image: url('../images/pizza-krusna-pec-2.webp');
   background-size: cover;
   background-position: center 40%;
   opacity: 0.2;
@@ -1343,7 +1343,7 @@ textarea { resize: vertical; min-height: 110px; }
   }
   .gallery-item img {
     width: 100%;
-    height: 58vw;
+    height: 72vw;
     object-fit: cover;
     display: block;
   }

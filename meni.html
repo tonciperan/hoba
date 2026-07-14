@@ -3,8 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Meni &amp; Cijene — HOBA bistro&amp;bar Grebaštica</title>
-  <meta name="description" content="Pogledajte cijeli meni HOBA bistro&bar restorana u Grebaštici — predjela, morski plodovi, pizza, meso i deserti s cijenama.">
+  <title>Meni i Cijene — HOBA Restoran Grebaštica | Riba, Plodovi Mora, Pizza kraj Šibenika</title>
+  <meta name="description" content="Cijeli meni HOBA bistro&bar restorana u Grebaštici kraj Šibenika — svježa jadranska riba, plodovi mora, hobotnica iz peke, pizza iz krušne peći, meso i deserti s cijenama.">
+  <meta name="keywords" content="meni restoran grebaštica, meni restoran šibenik, hoba bistro meni, riba meni grebaštica, pizza meni šibenik, peka cijena, plodovi mora cijene">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Meni i Cijene — HOBA Restoran Grebaštica, Šibenik">
+  <meta property="og:description" content="Cijeli meni s cijenama: svježa riba, plodovi mora, pizza iz krušne peći, hobotnica iz peke, mesa i deserti u Grebaštici kraj Šibenika.">
+  <meta property="og:image" content="https://DOMENA.com/images/pizza-krusna-pec-2.webp">
+  <meta property="og:url" content="https://DOMENA.com/meni.html">
+  <meta property="og:site_name" content="HOBA bistro&bar">
+  <meta property="og:locale" content="hr_HR">
+
+  <meta name="geo.region" content="HR-17">
+  <meta name="geo.placename" content="Grebaštica">
+  <meta name="geo.position" content="43.6892;15.9103">
+  <meta name="ICBM" content="43.6892, 15.9103">
+
   <link rel="alternate" hreflang="hr" href="https://DOMENA.com/meni.html">
   <link rel="alternate" hreflang="en" href="https://DOMENA.com/en/menu.html">
   <link rel="canonical" href="https://DOMENA.com/meni.html">
@@ -13,6 +29,37 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Inter:wght@300;400;500&display=swap">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="stylesheet" href="css/style.css">
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Početna", "item": "https://DOMENA.com/"},
+        {"@type": "ListItem", "position": 2, "name": "Meni i cijene", "item": "https://DOMENA.com/meni.html"}
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Restaurant",
+      "name": "HOBA bistro&bar",
+      "url": "https://DOMENA.com/",
+      "hasMenu": "https://DOMENA.com/meni.html",
+      "telephone": "+3850994439530",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Ul. Donji Banovci 65",
+        "addressLocality": "Grebaštica",
+        "postalCode": "22000",
+        "addressCountry": "HR"
+      },
+      "servesCuisine": ["Mediterranean", "Seafood", "Croatian", "Dalmatian", "Pizza"],
+      "priceRange": "€€"
+    }
+  ]
+  </script>
 </head>
 <body>
 
@@ -54,7 +101,7 @@
 
     <p class="meni-napomena">
       Naši jelovnici mijenjaju se prema dostupnosti svježe ribe i sezonskih namirnica. Za alergene i posebne dijete molimo kontaktirajte nas unaprijed.<br>
-      <strong style="color:var(--gold);">* Jela po narudžbi (peka, brudet) — narudžba potrebna dan ranije.</strong>
+      <strong style="color:var(--gold);">* Jela po narudžbi (peka, gregada, jastog) — narudžba potrebna dan ranije.</strong>
     </p>
 
     <!-- HLADNA PREDJELA -->
@@ -64,47 +111,48 @@
         <span class="meni-naziv">Tuna tartar</span>
         <span class="meni-opis">kruh, maslac</span>
         <span class="meni-tocke"></span>
-        <span class="meni-cijena">17 €</span>
+        <span class="meni-cijena">18 €</span>
       </div>
       <div class="meni-red">
         <span class="meni-naziv">Hobotnica na salatu</span>
         <span class="meni-tocke"></span>
-        <span class="meni-cijena">16 €</span>
+        <span class="meni-cijena">17 €</span>
       </div>
       <div class="meni-red">
-        <span class="meni-naziv">Carpaccio od tune</span>
+        <span class="meni-naziv">Hladna riblja plata</span>
+        <span class="meni-opis">carpaccio od tune, tuna tartar, hobotnica na salatu, marinirani inćuni • za dvije osobe</span>
         <span class="meni-tocke"></span>
-        <span class="meni-cijena">16 €</span>
-      </div>
-      <div class="meni-red">
-        <span class="meni-naziv">Hladna riblja plata za dvoje</span>
-        <span class="meni-opis">carpaccio od tune, tuna tartar, hobotnica na salatu, marinirani inćuni</span>
-        <span class="meni-tocke"></span>
-        <span class="meni-cijena">32 €</span>
+        <span class="meni-cijena">36 €</span>
       </div>
       <div class="meni-red">
         <span class="meni-naziv">Tartar od kozica</span>
         <span class="meni-opis">kruh, maslac</span>
         <span class="meni-tocke"></span>
-        <span class="meni-cijena">17 €</span>
+        <span class="meni-cijena">18 €</span>
       </div>
       <div class="meni-red">
-        <span class="meni-naziv">Pršut &amp; sir</span>
-        <span class="meni-opis">100 g pršuta, 100 g sira, masline</span>
+        <span class="meni-naziv">Pršut</span>
+        <span class="meni-opis">100 g</span>
         <span class="meni-tocke"></span>
-        <span class="meni-cijena">18 €</span>
+        <span class="meni-cijena">13 €</span>
+      </div>
+      <div class="meni-red">
+        <span class="meni-naziv">Sir</span>
+        <span class="meni-opis">100 g</span>
+        <span class="meni-tocke"></span>
+        <span class="meni-cijena">10 €</span>
       </div>
       <div class="meni-red">
         <span class="meni-naziv">Tatarski biftek</span>
         <span class="meni-opis">kruh, maslac</span>
         <span class="meni-tocke"></span>
-        <span class="meni-cijena">19 €</span>
+        <span class="meni-cijena">20 €</span>
       </div>
       <div class="meni-red">
         <span class="meni-naziv">Burrata</span>
         <span class="meni-opis">rikola, cherry rajčice</span>
         <span class="meni-tocke"></span>
-        <span class="meni-cijena">11 €</span>
+        <span class="meni-cijena">13 €</span>
       </div>
     </div>
 
@@ -117,13 +165,14 @@
         <span class="meni-cijena">14 €</span>
       </div>
       <div class="meni-red">
-        <span class="meni-naziv">Jakobove kapice (1 kom)</span>
+        <span class="meni-naziv">Jakobove kapice</span>
         <span class="meni-opis">pečene u maslinovom ulju, vinu i češnjaku</span>
         <span class="meni-tocke"></span>
-        <span class="meni-cijena">6,50 €</span>
+        <span class="meni-cijena">6,50 € / kom</span>
       </div>
       <div class="meni-red">
-        <span class="meni-naziv">Brbavice / Vongole na buzaru (0,5 kg)</span>
+        <span class="meni-naziv">Brbavice / vongole na buzaru</span>
+        <span class="meni-opis">0,5 kg</span>
         <span class="meni-tocke"></span>
         <span class="meni-cijena">30 €</span>
       </div>
@@ -135,7 +184,7 @@
       <div class="meni-red">
         <span class="meni-naziv">Pohana hobotnica</span>
         <span class="meni-tocke"></span>
-        <span class="meni-cijena">16 €</span>
+        <span class="meni-cijena">17 €</span>
       </div>
       <div class="meni-red">
         <span class="meni-naziv">Pečena hobotnica</span>
@@ -149,10 +198,110 @@
         <span class="meni-cijena">15 €</span>
       </div>
       <div class="meni-red">
-        <span class="meni-naziv">Pohana plata za dvoje</span>
+        <span class="meni-naziv">Jadranski hrskavi trio</span>
         <span class="meni-opis">kozice u tempuri, pohana hobotnica, pržene lignje, slatko-kiseli umak, tartar, pomfrit</span>
         <span class="meni-tocke"></span>
-        <span class="meni-cijena">34 €</span>
+        <span class="meni-cijena">36 €</span>
+      </div>
+    </div>
+
+    <!-- SALATE -->
+    <div class="meni-kategorija fade-in">
+      <h2 class="meni-kategorija-naziv">Salate</h2>
+      <div class="meni-red">
+        <span class="meni-naziv">Miješana salata</span>
+        <span class="meni-tocke"></span>
+        <span class="meni-cijena">5 €</span>
+      </div>
+      <div class="meni-red">
+        <span class="meni-naziv">Šopska salata</span>
+        <span class="meni-tocke"></span>
+        <span class="meni-cijena">7 €</span>
+      </div>
+      <div class="meni-red">
+        <span class="meni-naziv">Cezar salata</span>
+        <span class="meni-opis">piletina, salata, cherry rajčica, Grana Padano, radič, dresing</span>
+        <span class="meni-tocke"></span>
+        <span class="meni-cijena">12 €</span>
+      </div>
+    </div>
+
+    <!-- BURGERI -->
+    <div class="meni-kategorija fade-in">
+      <h2 class="meni-kategorija-naziv">Burgeri</h2>
+      <div class="meni-red">
+        <span class="meni-naziv">Burger House</span>
+        <span class="meni-opis">150 g junetine, rajčica, umak, crveni luk, salata, sir, krastavci, pomfrit</span>
+        <span class="meni-tocke"></span>
+        <span class="meni-cijena">14 €</span>
+      </div>
+      <div class="meni-red">
+        <span class="meni-naziv">Burger Hoba</span>
+        <span class="meni-opis">150 g junetine, barbecue umak, karamelizirani luk, mozzarella, rajčica, rikola, jaje, slanina, krastavci, pomfrit</span>
+        <span class="meni-tocke"></span>
+        <span class="meni-cijena">17 €</span>
+      </div>
+      <div class="meni-red">
+        <span class="meni-naziv">Burger Tuna</span>
+        <span class="meni-opis">150 g tune, coleslaw salata, tartar umak, rikola, pomfrit</span>
+        <span class="meni-tocke"></span>
+        <span class="meni-cijena">18 €</span>
+      </div>
+    </div>
+
+    <!-- RIBLJA JELA -->
+    <div class="meni-kategorija fade-in">
+      <h2 class="meni-kategorija-naziv">Riblja jela</h2>
+      <div class="meni-red">
+        <span class="meni-naziv">Dnevna ponuda jadranske ribe</span>
+        <span class="meni-tocke"></span>
+        <span class="meni-cijena">95 € / kg</span>
+      </div>
+      <div class="meni-red">
+        <span class="meni-naziv">Škamp na žaru</span>
+        <span class="meni-tocke"></span>
+        <span class="meni-cijena">80 € / kg</span>
+      </div>
+      <div class="meni-red">
+        <span class="meni-naziv">Škamp na buzaru</span>
+        <span class="meni-tocke"></span>
+        <span class="meni-cijena">80 € / kg</span>
+      </div>
+      <div class="meni-red">
+        <span class="meni-naziv">Tuna steak</span>
+        <span class="meni-opis">200 g, blitva s krumpirom</span>
+        <span class="meni-tocke"></span>
+        <span class="meni-cijena">24 €</span>
+      </div>
+      <div class="meni-red">
+        <span class="meni-naziv">Jadranske lignje na žaru</span>
+        <span class="meni-opis">300 g, blitva s krumpirom</span>
+        <span class="meni-tocke"></span>
+        <span class="meni-cijena">28 €</span>
+      </div>
+      <div class="meni-red">
+        <span class="meni-naziv">Pržene lignje</span>
+        <span class="meni-opis">pomfrit, tartar</span>
+        <span class="meni-tocke"></span>
+        <span class="meni-cijena">19 €</span>
+      </div>
+      <div class="meni-red">
+        <span class="meni-naziv">"Teća" plodovi mora za dvoje</span>
+        <span class="meni-opis">škampi, vongole, dagnje i tjestenina</span>
+        <span class="meni-tocke"></span>
+        <span class="meni-cijena">45 €</span>
+      </div>
+      <div class="meni-red">
+        <span class="meni-naziv">Orada</span>
+        <span class="meni-opis">500 g, blitva s krumpirom</span>
+        <span class="meni-tocke"></span>
+        <span class="meni-cijena">25 €</span>
+      </div>
+      <div class="meni-red">
+        <span class="meni-naziv">Dalmatinska riblja plata</span>
+        <span class="meni-opis">tuna steak, 2 pečene lignje, 2 škampa, orada, blitva s krumpirom • za dvije osobe</span>
+        <span class="meni-tocke"></span>
+        <span class="meni-cijena">60 €</span>
       </div>
     </div>
 
@@ -172,7 +321,7 @@
       <div class="meni-red">
         <span class="meni-naziv">Vegetarijanski rižot</span>
         <span class="meni-tocke"></span>
-        <span class="meni-cijena">10 €</span>
+        <span class="meni-cijena">11 €</span>
       </div>
     </div>
 
@@ -180,21 +329,25 @@
     <div class="meni-kategorija fade-in">
       <h2 class="meni-kategorija-naziv">Tjestenina</h2>
       <div class="meni-red">
-        <span class="meni-naziv">Tagliatelle s kozicama</span>
+        <span class="meni-naziv">Tagliatelle kozice</span>
         <span class="meni-tocke"></span>
-        <span class="meni-cijena">16 €</span>
+        <span class="meni-cijena">17 €</span>
       </div>
       <div class="meni-red">
         <span class="meni-naziv">Pljukanci s biftekom i tartufom</span>
         <span class="meni-opis">biftek, tjestenina, tartuf</span>
         <span class="meni-tocke"></span>
-        <span class="meni-cijena">18 €</span>
+        <span class="meni-cijena">20 €</span>
       </div>
       <div class="meni-red">
-        <span class="meni-naziv">Crni ravioli punjeni kozicama</span>
-        <span class="meni-opis">u umaku od datterino sušenih rajčica</span>
+        <span class="meni-naziv">Tagliatelle dimljeni losos</span>
         <span class="meni-tocke"></span>
-        <span class="meni-cijena">19 €</span>
+        <span class="meni-cijena">17 €</span>
+      </div>
+      <div class="meni-red">
+        <span class="meni-naziv">Špageti plodovi mora</span>
+        <span class="meni-tocke"></span>
+        <span class="meni-cijena">15 €</span>
       </div>
       <div class="meni-red">
         <span class="meni-naziv">Piletina u umaku s njokima</span>
@@ -218,145 +371,39 @@
       <h2 class="meni-kategorija-naziv">Mesna jela</h2>
       <div class="meni-red">
         <span class="meni-naziv">Biftek</span>
-        <span class="meni-opis">200 g, umak od zelenog papra, pečeni krumpir, povrće</span>
-        <span class="meni-tocke"></span>
-        <span class="meni-cijena">35 €</span>
-      </div>
-      <div class="meni-red">
-        <span class="meni-naziv">Rib Eye Steak</span>
-        <span class="meni-opis">+/- 700 g, umak od zelenog papra, pečeni krumpir, povrće</span>
+        <span class="meni-opis">250 g, umak od zelenog papra, pečeni krumpir, povrće</span>
         <span class="meni-tocke"></span>
         <span class="meni-cijena">37 €</span>
+      </div>
+      <div class="meni-red">
+        <span class="meni-naziv">Rib eye steak</span>
+        <span class="meni-opis">400 g, umak od zelenog papra, pečeni krumpir, povrće</span>
+        <span class="meni-tocke"></span>
+        <span class="meni-cijena">32 €</span>
+      </div>
+      <div class="meni-red">
+        <span class="meni-naziv">T-bone steak</span>
+        <span class="meni-opis">650 g, pečeni krumpir, povrće</span>
+        <span class="meni-tocke"></span>
+        <span class="meni-cijena">45 €</span>
+      </div>
+      <div class="meni-red">
+        <span class="meni-naziv">Punjena vješalica</span>
+        <span class="meni-opis">svinjski kare punjen sirom i kiselim krastavcima, omotan u pancetu</span>
+        <span class="meni-tocke"></span>
+        <span class="meni-cijena">15 €</span>
       </div>
       <div class="meni-red">
         <span class="meni-naziv">Pileći file</span>
         <span class="meni-opis">pomfrit</span>
         <span class="meni-tocke"></span>
-        <span class="meni-cijena">12 €</span>
+        <span class="meni-cijena">13 €</span>
       </div>
       <div class="meni-red">
-        <span class="meni-naziv">Teleći kotlet</span>
-        <span class="meni-opis">pomfrit</span>
-        <span class="meni-tocke"></span>
-        <span class="meni-cijena">19 €</span>
-      </div>
-      <div class="meni-red">
-        <span class="meni-naziv">Ramstek</span>
-        <span class="meni-opis">pomfrit</span>
-        <span class="meni-tocke"></span>
-        <span class="meni-cijena">19 €</span>
-      </div>
-      <div class="meni-red">
-        <span class="meni-naziv">Tomahawk Steak</span>
-        <span class="meni-opis">+/- 500 g, pečeni krumpir, povrće</span>
-        <span class="meni-tocke"></span>
-        <span class="meni-cijena">45 €</span>
-      </div>
-      <div class="meni-red">
-        <span class="meni-naziv">Mesna plata za dvoje</span>
-        <span class="meni-opis">6 ćevapa, pileći file, teleći kotlet, ramstek, 2 kobasice, pomfrit, ajvar, kapula</span>
-        <span class="meni-tocke"></span>
-        <span class="meni-cijena">37 €</span>
-      </div>
-    </div>
-
-    <!-- SALATE -->
-    <div class="meni-kategorija fade-in">
-      <h2 class="meni-kategorija-naziv">Salate</h2>
-      <div class="meni-red">
-        <span class="meni-naziv">Miješana salata</span>
-        <span class="meni-tocke"></span>
-        <span class="meni-cijena">5 €</span>
-      </div>
-      <div class="meni-red">
-        <span class="meni-naziv">Šopska salata</span>
-        <span class="meni-tocke"></span>
-        <span class="meni-cijena">7 €</span>
-      </div>
-      <div class="meni-red">
-        <span class="meni-naziv">Cezar salata</span>
-        <span class="meni-opis">piletina, salata, cherry rajčica, grana padano, radič, dresing</span>
-        <span class="meni-tocke"></span>
-        <span class="meni-cijena">11 €</span>
-      </div>
-    </div>
-
-    <!-- BURGERI -->
-    <div class="meni-kategorija fade-in">
-      <h2 class="meni-kategorija-naziv">Burgeri</h2>
-      <div class="meni-red">
-        <span class="meni-naziv">Burger House</span>
-        <span class="meni-opis">150 g junetine, rajčica, umak, crveni luk, salata, sir, krastavci, pomfrit</span>
-        <span class="meni-tocke"></span>
-        <span class="meni-cijena">14 €</span>
-      </div>
-      <div class="meni-red">
-        <span class="meni-naziv">Burger Hoba</span>
-        <span class="meni-opis">150 g junetine, barbecue umak, karameli. luk, mozzarella, rajčica, rikola, jaje, slanina, krastavci, pomfrit</span>
+        <span class="meni-naziv">Ćevapi</span>
+        <span class="meni-opis">10 ćevapa, ajvar, kapula, pomfrit</span>
         <span class="meni-tocke"></span>
         <span class="meni-cijena">15 €</span>
-      </div>
-      <div class="meni-red">
-        <span class="meni-naziv">Burger Tuna</span>
-        <span class="meni-opis">150 g tune, coleslaw salata, tartar umak, rikola, pomfrit</span>
-        <span class="meni-tocke"></span>
-        <span class="meni-cijena">18 €</span>
-      </div>
-    </div>
-
-    <!-- RIBLJA JELA -->
-    <div class="meni-kategorija fade-in">
-      <h2 class="meni-kategorija-naziv">Riblja jela</h2>
-      <div class="meni-red">
-        <span class="meni-naziv">Dnevna ponuda jadranske ribe</span>
-        <span class="meni-tocke"></span>
-        <span class="meni-cijena">95 €/kg</span>
-      </div>
-      <div class="meni-red">
-        <span class="meni-naziv">Škampi na žaru</span>
-        <span class="meni-tocke"></span>
-        <span class="meni-cijena">80 €/kg</span>
-      </div>
-      <div class="meni-red">
-        <span class="meni-naziv">Škampi na buzaru</span>
-        <span class="meni-tocke"></span>
-        <span class="meni-cijena">80 €/kg</span>
-      </div>
-      <div class="meni-red">
-        <span class="meni-naziv">Tuna steak</span>
-        <span class="meni-opis">200 g tune, blitva s krumpirom</span>
-        <span class="meni-tocke"></span>
-        <span class="meni-cijena">24 €</span>
-      </div>
-      <div class="meni-red">
-        <span class="meni-naziv">Jadranske lignje na žaru</span>
-        <span class="meni-opis">300 g pečenih lignji, blitva s krumpirom</span>
-        <span class="meni-tocke"></span>
-        <span class="meni-cijena">27 €</span>
-      </div>
-      <div class="meni-red">
-        <span class="meni-naziv">Pržene lignje</span>
-        <span class="meni-opis">pomfrit, tartar</span>
-        <span class="meni-tocke"></span>
-        <span class="meni-cijena">18 €</span>
-      </div>
-      <div class="meni-red">
-        <span class="meni-naziv">"Teća" plodovi mora za dvoje</span>
-        <span class="meni-opis">škampi, vongole, dagnje i tjestenina</span>
-        <span class="meni-tocke"></span>
-        <span class="meni-cijena">45 €</span>
-      </div>
-      <div class="meni-red">
-        <span class="meni-naziv">Orada</span>
-        <span class="meni-opis">500 g orade, blitva s krumpirom</span>
-        <span class="meni-tocke"></span>
-        <span class="meni-cijena">25 €</span>
-      </div>
-      <div class="meni-red">
-        <span class="meni-naziv">Riblja plata za dvoje</span>
-        <span class="meni-opis">tuna steak, pečene lignje, 2 škampa, orada, 2 kraka hobotnice, blitva s krumpirom</span>
-        <span class="meni-tocke"></span>
-        <span class="meni-cijena">60 €</span>
       </div>
     </div>
 
@@ -373,79 +420,79 @@
         <span class="meni-naziv">Vesuvio</span>
         <span class="meni-opis">rajčica, sir, šunka</span>
         <span class="meni-tocke"></span>
-        <span class="meni-cijena">9 €</span>
+        <span class="meni-cijena">10 €</span>
       </div>
       <div class="meni-red">
         <span class="meni-naziv">Funghi</span>
         <span class="meni-opis">rajčica, sir, gljive</span>
         <span class="meni-tocke"></span>
-        <span class="meni-cijena">9 €</span>
+        <span class="meni-cijena">10 €</span>
       </div>
       <div class="meni-red">
-        <span class="meni-naziv">Capriciosa</span>
+        <span class="meni-naziv">Capricciosa</span>
         <span class="meni-opis">rajčica, sir, šunka, gljive</span>
         <span class="meni-tocke"></span>
-        <span class="meni-cijena">9 €</span>
+        <span class="meni-cijena">10 €</span>
       </div>
       <div class="meni-red">
         <span class="meni-naziv">Četiri vrste sira</span>
-        <span class="meni-opis">rajčica, edamer, parmezan, mozzarella, gorgonzola</span>
+        <span class="meni-opis">rajčica, Edamer, parmezan, mozzarella, gorgonzola</span>
         <span class="meni-tocke"></span>
-        <span class="meni-cijena">10 €</span>
+        <span class="meni-cijena">12 €</span>
       </div>
       <div class="meni-red">
         <span class="meni-naziv">Vegetariana</span>
         <span class="meni-opis">rajčica, sir, gljive, povrće</span>
         <span class="meni-tocke"></span>
-        <span class="meni-cijena">10 €</span>
+        <span class="meni-cijena">11 €</span>
       </div>
       <div class="meni-red">
         <span class="meni-naziv">Slavonska</span>
         <span class="meni-opis">rajčica, sir, slanina, kulen, ljuti feferoni</span>
         <span class="meni-tocke"></span>
-        <span class="meni-cijena">11 €</span>
+        <span class="meni-cijena">12 €</span>
       </div>
       <div class="meni-red">
         <span class="meni-naziv">Dalmatino</span>
         <span class="meni-opis">rajčica, sir, šunka, pršut, masline</span>
         <span class="meni-tocke"></span>
-        <span class="meni-cijena">10 €</span>
-      </div>
-      <div class="meni-red">
-        <span class="meni-naziv">Al Tonno</span>
-        <span class="meni-opis">rajčica, sir, tuna, kapula, masline</span>
-        <span class="meni-tocke"></span>
         <span class="meni-cijena">12 €</span>
       </div>
       <div class="meni-red">
-        <span class="meni-naziv">Bresaola</span>
-        <span class="meni-opis">rajčica, mozzarella, bresaola, marinirane sušene rajčice, karameli. luk, rikola</span>
+        <span class="meni-naziv">Al tonno</span>
+        <span class="meni-opis">rajčica, sir, tuna, kapula, masline</span>
         <span class="meni-tocke"></span>
-        <span class="meni-cijena">16 €</span>
+        <span class="meni-cijena">13 €</span>
+      </div>
+      <div class="meni-red">
+        <span class="meni-naziv">Bresaola</span>
+        <span class="meni-opis">rajčica, mozzarella, bresaola, marinirane sušene rajčice, karamelizirani luk, rikola</span>
+        <span class="meni-tocke"></span>
+        <span class="meni-cijena">18 €</span>
       </div>
       <div class="meni-red">
         <span class="meni-naziv">Plodovi mora</span>
         <span class="meni-opis">rajčica, sir, plodovi mora, češnjak</span>
         <span class="meni-tocke"></span>
-        <span class="meni-cijena">14 €</span>
+        <span class="meni-cijena">15 €</span>
       </div>
       <div class="meni-red">
         <span class="meni-naziv">Pizza Hoba</span>
-        <span class="meni-opis">rajčica, sir, hobotnica, kapula, kapare, cherry rajčice, tršćanski umak</span>
-        <span class="meni-tocke"></span>
-        <span class="meni-cijena">16 €</span>
-      </div>
-      <div class="meni-red">
-        <span class="meni-naziv">Pizza Salami</span>
-        <span class="meni-opis">rajčica, sir, salama</span>
-        <span class="meni-tocke"></span>
-        <span class="meni-cijena">9 €</span>
-      </div>
-      <div class="meni-red">
-        <span class="meni-naziv">Pizza Italiana</span>
-        <span class="meni-opis">pesto genovese, burrata, mortadela, pistacije</span>
+        <span class="meni-opis">rajčica, sir, hobotnica, kapula, kapare, cherry rajčice, tršćanski umak (češnjak i maslinovo ulje)</span>
         <span class="meni-tocke"></span>
         <span class="meni-cijena">17 €</span>
+      </div>
+      <div class="meni-red">
+        <span class="meni-naziv">Pizza salami</span>
+        <span class="meni-opis">rajčica, sir, salama</span>
+        <span class="meni-tocke"></span>
+        <span class="meni-cijena">11 €</span>
+      </div>
+      <div class="meni-red">
+        <span class="meni-naziv">Pizza italiana</span>
+        <span class="meni-opis">Pesto Genovese, burrata, mortadela, pistacija</span>
+        <span class="meni-tocke"></span>
+        <span class="meni-cijena">18 €</span>
       </div>
       <div class="meni-red">
         <span class="meni-naziv">Dodaci pizzi</span>
@@ -454,24 +501,18 @@
       </div>
     </div>
 
-    <!-- DJEČJI MENU -->
+    <!-- DJEČJI MENI -->
     <div class="meni-kategorija fade-in">
-      <h2 class="meni-kategorija-naziv">Dječji menu</h2>
+      <h2 class="meni-kategorija-naziv">Dječji meni</h2>
       <div class="meni-red">
-        <span class="meni-naziv">Pileći file</span>
-        <span class="meni-opis">pomfrit</span>
-        <span class="meni-tocke"></span>
-        <span class="meni-cijena">9 €</span>
-      </div>
-      <div class="meni-red">
-        <span class="meni-naziv">Špageti Milanese</span>
+        <span class="meni-naziv">Špageti milanese</span>
         <span class="meni-tocke"></span>
         <span class="meni-cijena">8 €</span>
       </div>
       <div class="meni-red">
-        <span class="meni-naziv">Chicken Nuggets</span>
+        <span class="meni-naziv">Chicken nuggets</span>
         <span class="meni-tocke"></span>
-        <span class="meni-cijena">9 €</span>
+        <span class="meni-cijena">10 €</span>
       </div>
     </div>
 
@@ -489,12 +530,7 @@
         <span class="meni-cijena">4 €</span>
       </div>
       <div class="meni-red">
-        <span class="meni-naziv">Pečeni krumpir</span>
-        <span class="meni-tocke"></span>
-        <span class="meni-cijena">5 €</span>
-      </div>
-      <div class="meni-red">
-        <span class="meni-naziv">Kruh</span>
+        <span class="meni-naziv">Pečeni kruh</span>
         <span class="meni-tocke"></span>
         <span class="meni-cijena">3 €</span>
       </div>
@@ -510,14 +546,19 @@
       <h2 class="meni-kategorija-naziv">Deserti</h2>
       <div class="meni-red">
         <span class="meni-naziv">Palačinke</span>
-        <span class="meni-opis">Nutella, džem</span>
+        <span class="meni-opis">Nutella ili džem</span>
         <span class="meni-tocke"></span>
         <span class="meni-cijena">6 €</span>
       </div>
       <div class="meni-red">
-        <span class="meni-naziv">Desert dana</span>
+        <span class="meni-naziv">Lava cake</span>
         <span class="meni-tocke"></span>
         <span class="meni-cijena">6 €</span>
+      </div>
+      <div class="meni-red">
+        <span class="meni-naziv">Limun torta</span>
+        <span class="meni-tocke"></span>
+        <span class="meni-cijena">7 €</span>
       </div>
     </div>
 
@@ -528,109 +569,37 @@
         <span class="meni-naziv">Peka hobotnica</span>
         <span class="meni-opis">cijena po osobi</span>
         <span class="meni-tocke"></span>
-        <span class="meni-cijena">28 €</span>
+        <span class="meni-cijena">29 €</span>
       </div>
       <div class="meni-red">
         <span class="meni-naziv">Peka janjetina</span>
         <span class="meni-opis">cijena po osobi</span>
         <span class="meni-tocke"></span>
-        <span class="meni-cijena">28 €</span>
+        <span class="meni-cijena">29 €</span>
       </div>
       <div class="meni-red">
         <span class="meni-naziv">Peka teletina</span>
         <span class="meni-opis">cijena po osobi</span>
         <span class="meni-tocke"></span>
-        <span class="meni-cijena">24 €</span>
+        <span class="meni-cijena">25 €</span>
       </div>
       <div class="meni-red">
         <span class="meni-naziv">Brancin ispod peke</span>
         <span class="meni-opis">cijena po osobi</span>
         <span class="meni-tocke"></span>
-        <span class="meni-cijena">25 €</span>
+        <span class="meni-cijena">27 €</span>
       </div>
       <div class="meni-red">
-        <span class="meni-naziv">Brudet (dalmatinski riblji brudet)</span>
+        <span class="meni-naziv">Gregada</span>
         <span class="meni-opis">cijena po osobi</span>
         <span class="meni-tocke"></span>
         <span class="meni-cijena">30 €</span>
       </div>
-    </div>
-
-    <!-- KAVA -->
-    <div class="meni-kategorija fade-in">
-      <h2 class="meni-kategorija-naziv">Kava</h2>
-      <div class="meni-red"><span class="meni-naziv">Espresso</span><span class="meni-tocke"></span><span class="meni-cijena">1,90 €</span></div>
-      <div class="meni-red"><span class="meni-naziv">Kava s mlijekom velika</span><span class="meni-tocke"></span><span class="meni-cijena">2,20 €</span></div>
-      <div class="meni-red"><span class="meni-naziv">Cappuccino</span><span class="meni-tocke"></span><span class="meni-cijena">2,50 €</span></div>
-      <div class="meni-red"><span class="meni-naziv">Nescafé</span><span class="meni-tocke"></span><span class="meni-cijena">2,70 €</span></div>
-      <div class="meni-red"><span class="meni-naziv">Americano</span><span class="meni-tocke"></span><span class="meni-cijena">2,30 €</span></div>
-      <div class="meni-red"><span class="meni-naziv">Čaj</span><span class="meni-tocke"></span><span class="meni-cijena">3 €</span></div>
-      <div class="meni-red"><span class="meni-naziv">Bezkofeinska kava</span><span class="meni-tocke"></span><span class="meni-cijena">2,50 €</span></div>
-    </div>
-
-    <!-- VODA -->
-    <div class="meni-kategorija fade-in">
-      <h2 class="meni-kategorija-naziv">Voda</h2>
-      <div class="meni-red"><span class="meni-naziv">Mineralna voda 1 L</span><span class="meni-tocke"></span><span class="meni-cijena">5 €</span></div>
-      <div class="meni-red"><span class="meni-naziv">Mineralna voda 0,33 L</span><span class="meni-tocke"></span><span class="meni-cijena">3 €</span></div>
-      <div class="meni-red"><span class="meni-naziv">Prirodna voda 0,75 L</span><span class="meni-tocke"></span><span class="meni-cijena">5 €</span></div>
-      <div class="meni-red"><span class="meni-naziv">Prirodna voda 0,33 L</span><span class="meni-tocke"></span><span class="meni-cijena">3 €</span></div>
-      <div class="meni-red"><span class="meni-naziv">Jamnica narančada / limunada 0,33 L</span><span class="meni-tocke"></span><span class="meni-cijena">3,50 €</span></div>
-    </div>
-
-    <!-- SOKOVI -->
-    <div class="meni-kategorija fade-in">
-      <h2 class="meni-kategorija-naziv">Sokovi &amp; bezalkoholno</h2>
-      <div class="meni-red"><span class="meni-naziv">Coca-Cola / Coca-Cola Zero</span><span class="meni-tocke"></span><span class="meni-cijena">3,40 €</span></div>
-      <div class="meni-red"><span class="meni-naziv">Sprite / Fanta</span><span class="meni-tocke"></span><span class="meni-cijena">3,40 €</span></div>
-      <div class="meni-red"><span class="meni-naziv">Cockta</span><span class="meni-tocke"></span><span class="meni-cijena">3,40 €</span></div>
-      <div class="meni-red"><span class="meni-naziv">Orangina</span><span class="meni-tocke"></span><span class="meni-cijena">3,60 €</span></div>
-      <div class="meni-red"><span class="meni-naziv">Tonic / Bitter Lemon</span><span class="meni-tocke"></span><span class="meni-cijena">3,40 €</span></div>
-      <div class="meni-red"><span class="meni-naziv">Hidra</span><span class="meni-tocke"></span><span class="meni-cijena">4 €</span></div>
-      <div class="meni-red"><span class="meni-naziv">Red Bull</span><span class="meni-tocke"></span><span class="meni-cijena">6 €</span></div>
-      <div class="meni-red"><span class="meni-naziv">Sok (jabuka, naranča, marelica, jagoda)</span><span class="meni-tocke"></span><span class="meni-cijena">3,50 €</span></div>
-      <div class="meni-red"><span class="meni-naziv">Svježe cijeđena naranča</span><span class="meni-tocke"></span><span class="meni-cijena">4,50 €</span></div>
-      <div class="meni-red"><span class="meni-naziv">Limunada</span><span class="meni-tocke"></span><span class="meni-cijena">3 €</span></div>
-      <div class="meni-red"><span class="meni-naziv">Cedevita</span><span class="meni-tocke"></span><span class="meni-cijena">3 €</span></div>
-      <div class="meni-red"><span class="meni-naziv">Ledeni čaj</span><span class="meni-tocke"></span><span class="meni-cijena">3,40 €</span></div>
-    </div>
-
-    <!-- PIVO -->
-    <div class="meni-kategorija fade-in">
-      <h2 class="meni-kategorija-naziv">Pivo</h2>
-      <div class="meni-red"><span class="meni-naziv">Stella 0,33 L</span><span class="meni-tocke"></span><span class="meni-cijena">4,20 €</span></div>
-      <div class="meni-red"><span class="meni-naziv">Vukovarsko 0,5 L</span><span class="meni-tocke"></span><span class="meni-cijena">3,80 €</span></div>
-      <div class="meni-red"><span class="meni-naziv">Radler 0,5 L</span><span class="meni-tocke"></span><span class="meni-cijena">3,70 €</span></div>
-      <div class="meni-red"><span class="meni-naziv">Ožujsko 0,33 L</span><span class="meni-tocke"></span><span class="meni-cijena">3,40 €</span></div>
-      <div class="meni-red"><span class="meni-naziv">Staropramen 0,5 L</span><span class="meni-tocke"></span><span class="meni-cijena">3,80 €</span></div>
-      <div class="meni-red"><span class="meni-naziv">Tomislav 0,5 L</span><span class="meni-tocke"></span><span class="meni-cijena">3,70 €</span></div>
-      <div class="meni-red"><span class="meni-naziv">Bezalkoholno pivo</span><span class="meni-tocke"></span><span class="meni-cijena">3,60 €</span></div>
-      <div class="meni-red"><span class="meni-naziv">Točeno Ožujsko 0,5 L</span><span class="meni-tocke"></span><span class="meni-cijena">4,10 €</span></div>
-      <div class="meni-red"><span class="meni-naziv">Točeno Ožujsko 0,3 L</span><span class="meni-tocke"></span><span class="meni-cijena">3 €</span></div>
-      <div class="meni-red"><span class="meni-naziv">Točena Stella 0,4 L</span><span class="meni-tocke"></span><span class="meni-cijena">4,80 €</span></div>
-      <div class="meni-red"><span class="meni-naziv">Točena Stella 0,25 L</span><span class="meni-tocke"></span><span class="meni-cijena">3,50 €</span></div>
-    </div>
-
-    <!-- KOKTELI -->
-    <div class="meni-kategorija fade-in">
-      <h2 class="meni-kategorija-naziv">Kokteli</h2>
-      <div class="meni-red"><span class="meni-naziv">Mojito</span><span class="meni-tocke"></span><span class="meni-cijena">10 €</span></div>
-      <div class="meni-red"><span class="meni-naziv">Negroni</span><span class="meni-tocke"></span><span class="meni-cijena">12 €</span></div>
-      <div class="meni-red"><span class="meni-naziv">Espresso Martini</span><span class="meni-tocke"></span><span class="meni-cijena">10 €</span></div>
-      <div class="meni-red"><span class="meni-naziv">Whiskey Sour</span><span class="meni-tocke"></span><span class="meni-cijena">15 €</span></div>
-      <div class="meni-red"><span class="meni-naziv">Aperol Spritz</span><span class="meni-tocke"></span><span class="meni-cijena">9 €</span></div>
-      <div class="meni-red"><span class="meni-naziv">Hugo Spritz</span><span class="meni-tocke"></span><span class="meni-cijena">9 €</span></div>
-    </div>
-
-    <!-- BIJELO VINO -->
-    <div class="meni-kategorija fade-in">
-      <h2 class="meni-kategorija-naziv">Bijelo vino</h2>
-      <div class="meni-red"><span class="meni-naziv">Ante Sladić Debit 0,75 L</span><span class="meni-tocke"></span><span class="meni-cijena">32 €</span></div>
-      <div class="meni-red"><span class="meni-naziv">Ante Sladić Debit 0,10 L</span><span class="meni-tocke"></span><span class="meni-cijena">5 €</span></div>
-      <div class="meni-red"><span class="meni-naziv">Galić Sauvignon 0,75 L</span><span class="meni-tocke"></span><span class="meni-cijena">34 €</span></div>
-      <div class="meni-red"><span class="meni-naziv">Benvenuti Malvazija 0,75 L</span><span class="meni-tocke"></span><span class="meni-cijena">34 €</span></div>
-      <div class="meni-red"><span class="meni-naziv">Testament Pošip 0,75 L</span><span class="meni-tocke"></span><span class="meni-cijena">32 €</span></div>
-      <div class="meni-red"><span class="meni-naziv">Krauthaker Chardonnay 0,75 L</span><span class="meni-tocke"></span><span class="meni-cijena">45 €</span></div>
+      <div class="meni-red">
+        <span class="meni-naziv">Jastog</span>
+        <span class="meni-tocke"></span>
+        <span class="meni-cijena">100 € / kg</span>
+      </div>
     </div>
 
     <div style="text-align:center;margin-top:3rem;padding-top:2rem;border-top:1px solid var(--border);">
