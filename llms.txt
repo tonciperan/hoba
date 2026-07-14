@@ -10,8 +10,8 @@
 - **Adresa**: Ul. Donji Banovci 65, 22000 Grebaštica, Hrvatska
 - **Lokacija**: Grebaštica, 10 km od Šibenika, Dalmacija
 - **Koordinate**: 43.6892°N, 15.9103°E
-- **Telefon**: +385 099 443 9530
-- **WhatsApp**: +385 099 443 9530
+- **Telefon**: +385 99 443 9530
+- **WhatsApp**: +385 99 443 9530
 - **Radno vrijeme**: Pon–Ned 12:00–23:00
 - **Google ocjena**: 4.8/5
 - **Jezici**: Hrvatski, Engleski
@@ -161,7 +161,7 @@
 - **Type**: Restaurant & bar
 - **Cuisine**: Dalmatian, Mediterranean, seafood, pizza, grilled fish
 - **Address**: Ul. Donji Banovci 65, 22000 Grebaštica, Croatia
-- **Phone / WhatsApp**: +385 099 443 9530
+- **Phone / WhatsApp**: +385 99 443 9530
 - **Hours**: Mon–Sun 12:00–23:00
 - **Google rating**: 4.8 / 5
 - **Price range**: €€ (moderate)
