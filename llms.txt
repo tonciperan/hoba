@@ -1,4 +1,4 @@
-# HOBA bistro&bar — Restoran Grebaštica, Hrvatska
+﻿# HOBA bistro&bar — Restoran Grebaštica, Hrvatska
 
 > HOBA bistro&bar je restoran i bar smješten u Grebaštici, Dalmacija, Hrvatska, oko 10 km od Šibenika. Specijaliziran je za svježu jadransku ribu i plodove mora, hobotnicu iz peke, pizzu iz krušne peći i dalmatinsku kuhinju uz more.
 
@@ -141,10 +141,10 @@
 
 ## Linkovi
 
-- Web stranica: https://DOMENA.com/
-- Meni (HR): https://DOMENA.com/meni.html
-- Menu (EN): https://DOMENA.com/en/menu.html
-- Rezervacije: https://DOMENA.com/rezervacije.html
+- Web stranica: https://hobabistro.com/
+- Meni (HR): https://hobabistro.com/meni.html
+- Menu (EN): https://hobabistro.com/en/menu.html
+- Rezervacije: https://hobabistro.com/rezervacije.html
 - Instagram: https://www.instagram.com/hoba_bistrobar/
 - Facebook: https://www.facebook.com/profile.php?id=100093039376318
 - Google Maps: https://maps.google.com/?q=43.6892,15.9103
